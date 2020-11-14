@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navHomeFragment">
+    <fragment
+        android:id="@+id/navHomeFragment"
+        android:name="edu.cientifica.convivirapp.view.ui.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_estadoCuentaFragment"
+            app:destination="@id/navEstadoCuentaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pagosFragment"
+            app:destination="@id/navPagosFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_residentesFragment"
+            app:destination="@id/navResidentesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_comunicadosFragment"
+            app:destination="@id/navComunicadosFragment" />
+        <action
+            android:id="@+id/action_navHomeFragment_to_estCtaFragment"
+            app:destination="@id/navEstCtaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navEstadoCuentaFragment"
+        android:name="edu.cientifica.convivirapp.view.ui.fragments.EstadoCuentaFragment"
+        android:label="fragment_estado_cuenta"
+        tools:layout="@layout/fragment_estado_cuenta" />
+    <fragment
+        android:id="@+id/navResidentesFragment"
+        android:name="edu.cientifica.convivirapp.view.ui.fragments.ResidentesFragment"
+        android:label="fragment_residentes"
+        tools:layout="@layout/fragment_residentes" />
+    <fragment
+        android:id="@+id/navPagosFragment"
+        android:name="edu.cientifica.convivirapp.view.ui.fragments.PagosFragment"
+        android:label="fragment_pagos"
+        tools:layout="@layout/fragment_pagos" />
+    <fragment
+        android:id="@+id/navComunicadosFragment"
+        android:name="edu.cientifica.convivirapp.view.ui.fragments.ComunicadosFragment"
+        android:label="fragment_comunicados"
+        tools:layout="@layout/fragment_comunicados" />
+    <fragment
+        android:id="@+id/navEstCtaFragment"
+        android:name="edu.cientifica.convivirapp.view.ui.fragments.EstCtaFragment"
+        android:label="fragment_est_cta"
+        tools:layout="@layout/fragment_est_cta" />
+</navigation>

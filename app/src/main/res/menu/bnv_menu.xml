@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navHomeFragment"
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        />
+    <item
+        android:id="@+id/navEstCtaFragment"
+        android:title="Est. Cta."
+        android:icon="@drawable/ic_estcta"
+        />
+    <item
+        android:id="@+id/navResidentesFragment"
+        android:title="Residentes"
+        android:icon="@drawable/ic_people"
+        />
+    <item
+        android:id="@+id/navPagosFragment"
+        android:title="Pagos"
+        android:icon="@drawable/ic_gastos"
+        />
+    <item
+        android:id="@+id/navComunicadosFragment"
+        android:title="Comunicados"
+        android:icon="@drawable/ic_comunicados"
+        />
+
+</menu>
