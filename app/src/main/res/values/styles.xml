@@ -20,4 +20,18 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Base.Theme.Convivir" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/convivir_green_500</item>
+        <item name="colorOnPrimary">@color/convivir_yellow_500</item>
+        <item name="colorPrimaryDark">@color/convivir_green_700</item>
+        <item name="colorOnSurface">@color/convivir_black</item>
+        <item name="colorAccent">@color/convivir_green_700</item>
+        <item name="colorSurface">@color/convivir_gray_50</item>
+        <item name="colorSecondary">@color/convivir_yellow_500</item>
+        <item name="android:colorBackground">@color/convivir_green_500</item>
+    </style>
+
+
+
+
 </resources>

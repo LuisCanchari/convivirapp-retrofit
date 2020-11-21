@@ -1,6 +1,10 @@
 package edu.cientifica.convivirapp.view.ui.fragments;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,50 +12,34 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
-import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.cientifica.convivirapp.R;
 import edu.cientifica.convivirapp.model.EstadoCuenta;
-import edu.cientifica.convivirapp.model.EstadoCuentaUPrivada;
 import edu.cientifica.convivirapp.view.adapter.EstCtaAdapter;
 import edu.cientifica.convivirapp.view.adapter.EstCtaListener;
-import edu.cientifica.convivirapp.view.adapter.EstadoCuentaUPrivadaAdapter;
-import edu.cientifica.convivirapp.view.adapter.EstadoCuentaUPrivadaListener;
 import edu.cientifica.convivirapp.viewmodel.EstCtaViewModel;
-import edu.cientifica.convivirapp.viewmodel.EstadoCuentaUPrivadaViewModel;
 
-public class EstCtaFragment extends Fragment
-    implements EstadoCuentaUPrivadaListener
-
+public class EstCtaFragmentbk extends Fragment
+    implements EstCtaListener
 {
-    private static final String TAG = "CONVIVIRX";
     private RecyclerView recyclerViewEstCta;
-    //private EstCtaAdapter estCtaAdapter;
-    private EstadoCuentaUPrivadaAdapter estCtaAdapter;
-    //private EstCtaViewModel estCtaViewModel;
-    private EstadoCuentaUPrivadaViewModel estCtaViewModel;
-    //private List<EstadoCuenta> listaEstadoCuenta;
-    private List<EstadoCuentaUPrivada> listaEstadoCuenta;
+    private EstCtaAdapter estCtaAdapter;
+    private EstCtaViewModel estCtaViewModel;
+    private List<EstadoCuenta> listaEstadoCuenta;
     private  NavController navController;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        estCtaViewModel = new ViewModelProvider(this).get(EstadoCuentaUPrivadaViewModel.class);
+        estCtaViewModel = new ViewModelProvider(this).get(EstCtaViewModel.class);
         listaEstadoCuenta = new ArrayList<>();
 
     }
@@ -64,17 +52,13 @@ public class EstCtaFragment extends Fragment
 
     }
 
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         recyclerViewEstCta = view.findViewById(R.id.recyclerViewEstCta);
         navController = Navigation.findNavController(this.getActivity(), R.id.fragContenido);
         //
-        //estCtaAdapter =  new EstCtaAdapter(listaEstadoCuenta, getContext(),this);
-        estCtaAdapter = new EstadoCuentaUPrivadaAdapter(listaEstadoCuenta,this,getContext());
-
+        estCtaAdapter =  new EstCtaAdapter(listaEstadoCuenta, getContext(),this);
         recyclerViewEstCta.setLayoutManager(new LinearLayoutManager(view.getContext()));
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(view.getContext(),DividerItemDecoration.VERTICAL);
         recyclerViewEstCta.addItemDecoration(dividerItemDecoration);
@@ -82,11 +66,14 @@ public class EstCtaFragment extends Fragment
 
 
 
-        estCtaViewModel.getEstadoCuentaUPrivadaLiveData().observe(getViewLifecycleOwner(), new Observer<List<EstadoCuentaUPrivada>>() {
+        estCtaViewModel.getLiveDataEstCta().observe(getViewLifecycleOwner(), new Observer<List<EstadoCuenta>>() {
             @Override
-            public void onChanged(List<EstadoCuentaUPrivada> estadoCuentaUPrivadas) {
-                estCtaAdapter.setListaEstadoCuentaUPrivada(estadoCuentaUPrivadas);
-                listaEstadoCuenta = estadoCuentaUPrivadas;
+            public void onChanged(List<EstadoCuenta> estadoCuentas) {
+               //     listaEstadoCuenta.addAll(estadoCuentas);
+                estCtaAdapter.setListaEstadoCuenta(estadoCuentas);
+                listaEstadoCuenta=estadoCuentas;
+                //estCtaAdapter = new EstCtaAdapter(estadoCuentas, view.getContext());
+                //recyclerViewEstCta.setAdapter(estCtaAdapter);
             }
         });
 
@@ -94,10 +81,9 @@ public class EstCtaFragment extends Fragment
 
     @Override
     public void onItemClick(int position) {
-        Log.i(TAG, "onItemClick: ");
-        EstadoCuentaUPrivada estadoCuenta;
-        listaEstadoCuenta = estCtaViewModel.getEstadoCuentaUPrivadaLiveData().getValue();
-        //Toast.makeText(getContext(),listaEstadoCuenta.get(position).getNamePropietario(),Toast.LENGTH_LONG).show();
+        EstadoCuenta estadoCuenta;
+        listaEstadoCuenta = estCtaViewModel.getLiveDataEstCta().getValue();
+        Toast.makeText(getContext(),listaEstadoCuenta.get(position).getNamePropietario(),Toast.LENGTH_LONG).show();
         estadoCuenta = listaEstadoCuenta.get(position);
         //Preparando Bunble
         Bundle bundle = new Bundle();
@@ -109,8 +95,8 @@ public class EstCtaFragment extends Fragment
 
     @Override
     public void onItemLongClick(int position) {
-        listaEstadoCuenta = estCtaViewModel.getEstadoCuentaUPrivadaLiveData().getValue();
-        //Toast.makeText(getContext(),listaEstadoCuenta.get(position).getNamePropietario(),Toast.LENGTH_LONG).show();
+        listaEstadoCuenta = estCtaViewModel.getLiveDataEstCta().getValue();
+        Toast.makeText(getContext(),listaEstadoCuenta.get(position).getNamePropietario(),Toast.LENGTH_LONG).show();
         //listaEstadoCuenta.remove(position);
         //estCtaAdapter.notifyItemRemoved(position);
     }

@@ -17,12 +17,14 @@ import edu.cientifica.convivirapp.model.EstadoCuenta;
 public class EstCtaAdapter
         extends RecyclerView.Adapter<EstCtaAdapter.ViewHolder> {
 
-    private static final String TAG="ComunicadoAdapter";
+    private static final String TAG="CONVIVIRX";
     private List<EstadoCuenta> listaEstadoCuenta;
     private EstCtaListener estCtaListener;
     Context context;
 
-    public EstCtaAdapter(List<EstadoCuenta> listaEstadoCuenta, Context context, EstCtaListener estCtaListener) {
+    public EstCtaAdapter(List<EstadoCuenta> listaEstadoCuenta,
+                         Context context,
+                         EstCtaListener estCtaListener) {
         this.listaEstadoCuenta = listaEstadoCuenta;
         this.context = context;
         this.estCtaListener=estCtaListener;

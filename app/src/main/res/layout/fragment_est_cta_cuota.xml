@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ui.fragments.EstCtaCuotaFragment">
+
+
+    <LinearLayout
+        android:id="@+id/linearlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginBottom="10dp"
+
+        android:layout_weight="4"
+        android:background="@color/convivir_green_300"
+        android:orientation="vertical"
+        android:weightSum="4"
+        android:padding="5dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvTipoNumero"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="35"
+            android:text="Tipo y Numero: " />
+
+        <TextView
+            android:id="@+id/tvPropietario"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="35"
+            android:text="Propietario: " />
+
+        <TextView
+            android:id="@+id/tvMontoTotal"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="35"
+            android:text="Deuda: " />
+
+        <TextView
+            android:id="@+id/tvDetalle"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="DETALLE: " />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

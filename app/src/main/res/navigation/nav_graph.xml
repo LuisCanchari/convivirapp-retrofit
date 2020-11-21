@@ -29,7 +29,11 @@
         android:id="@+id/navEstadoCuentaFragment"
         android:name="edu.cientifica.convivirapp.view.ui.fragments.EstadoCuentaFragment"
         android:label="fragment_estado_cuenta"
-        tools:layout="@layout/fragment_estado_cuenta" />
+        tools:layout="@layout/fragment_estado_cuenta" >
+        <action
+            android:id="@+id/action_navEstadoCuentaFragment_to_navEstCtaCuotaFragment"
+            app:destination="@id/navEstCtaCuotaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navResidentesFragment"
         android:name="edu.cientifica.convivirapp.view.ui.fragments.ResidentesFragment"
@@ -50,4 +54,9 @@
         android:name="edu.cientifica.convivirapp.view.ui.fragments.EstCtaFragment"
         android:label="fragment_est_cta"
         tools:layout="@layout/fragment_est_cta" />
+    <fragment
+        android:id="@+id/navEstCtaCuotaFragment"
+        android:name="edu.cientifica.convivirapp.view.ui.fragments.EstCtaCuotaFragment"
+        android:label="fragment_est_cta_cuota"
+        tools:layout="@layout/fragment_est_cta_cuota" />
 </navigation>

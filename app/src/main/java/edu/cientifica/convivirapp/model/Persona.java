@@ -2,7 +2,8 @@ package edu.cientifica.convivirapp.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class Persona {
     @SerializedName("id")
@@ -18,12 +19,12 @@ public class Persona {
     @SerializedName("segundoApellido")
     private String segundoApellido;
     @SerializedName("fechaNacimiento")
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
 
     public Persona() {
     }
 
-    public Persona(int id, int tipoDocumento, String numDocumento, String nombre, String primerApellido, String segundoApellido, Date fechaNacimiento) {
+    public Persona(int id, int tipoDocumento, String numDocumento, String nombre, String primerApellido, String segundoApellido, String fechaNacimiento) {
         this.id = id;
         this.tipoDocumento = tipoDocumento;
         this.numDocumento = numDocumento;
@@ -81,11 +82,24 @@ public class Persona {
         this.segundoApellido = segundoApellido;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", tipoDocumento=" + tipoDocumento +
+                ", numDocumento='" + numDocumento + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", primerApellido='" + primerApellido + '\'' +
+                ", segundoApellido='" + segundoApellido + '\'' +
+                ", fechaNacimiento='" + fechaNacimiento + '\'' +
+                '}';
     }
 }

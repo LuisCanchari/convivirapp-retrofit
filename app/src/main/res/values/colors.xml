@@ -3,4 +3,19 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="green">#21B607</color>
+    <color name="green_li">#30D609</color>
+
+    <color name="convivir_black">#de000000</color>
+    <color name="convivir_gray_50">#fafafa</color>
+    <color name="convivir_gray_50_a600">#99fafafa</color>
+    <color name="convivir_green_300">#6dc790</color>
+    <color name="convivir_green_500">#49bb79</color>
+    <color name="convivir_green_700">#005d2b</color>
+    <color name="convivir_green_900">#1a231e</color>
+    <color name="convivir_white">#deffffff</color>
+    <color name="convivir_yellow_300">#f8f99f</color>
+    <color name="convivir_yellow_500">#ffff63</color>
+
+
 </resources>

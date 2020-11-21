@@ -27,7 +27,7 @@ import edu.cientifica.convivirapp.viewmodel.ComunicadoViewModel;
 
 
 public class ComunicadosFragment extends Fragment implements ComunicadoListener {
-    private static final String TAG = "ComunicadosFragment";
+    private static final String TAG = "CONVIVIRX";
     private RecyclerView recyclerView;
     private ComunicadoAdapter comunicadoAdapter;
     private ComunicadoViewModel comunicadoViewModel;

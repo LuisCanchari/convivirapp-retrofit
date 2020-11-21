@@ -21,7 +21,7 @@ public class ResidenteViewModel extends ViewModel {
         if(residentes==null){
             residentes = new MutableLiveData<List<Residente>>();
             residenteList=new ArrayList<>();
-            cargaInicial();
+          //  cargaInicial();
             Log.i("ControlLiveData", " Residente");
         }
         return residentes;
@@ -33,14 +33,14 @@ public class ResidenteViewModel extends ViewModel {
     }
 
     private void cargaInicial() {
-
+/*
         residenteList.add(new Residente(1,"Luis","12345678"));
         residenteList.add(new Residente(2,"Juan","22222222"));
         residenteList.add(new Residente(3,"Pedro","33333333"));
         residenteList.add(new Residente(4,"Miguel","44444444"));
 
         residentes.setValue(residenteList);
-
+*/
     }
 
 }

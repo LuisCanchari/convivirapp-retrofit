@@ -1,6 +1,8 @@
-package edu.cientifica.convivirapp.model;
+package edu.cientifica.convivirapp.demo;
 
 import java.util.ArrayList;
+
+import edu.cientifica.convivirapp.demo.Pokemon;
 
 public class PokemonRespuesta {
     private ArrayList<Pokemon> results;

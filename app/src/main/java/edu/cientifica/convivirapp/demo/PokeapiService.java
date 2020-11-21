@@ -1,7 +1,7 @@
-package edu.cientifica.convivirapp.network;
+package edu.cientifica.convivirapp.demo;
 
 
-import edu.cientifica.convivirapp.model.PokemonRespuesta;
+import edu.cientifica.convivirapp.demo.PokemonRespuesta;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

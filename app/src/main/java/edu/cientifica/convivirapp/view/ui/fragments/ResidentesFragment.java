@@ -83,7 +83,7 @@ public class ResidentesFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                residenteViewModel.insertarResidente(new Residente(9,"Lulu","99999"));
+            //    residenteViewModel.insertarResidente(new Residente(9,"Lulu","99999"));
 
 
               //  residenteViewModel.insertarResidente();

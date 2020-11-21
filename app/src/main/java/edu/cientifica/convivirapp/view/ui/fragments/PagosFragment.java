@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import edu.cientifica.convivirapp.R;
-import edu.cientifica.convivirapp.model.Pokemon;
-import edu.cientifica.convivirapp.model.PokemonRespuesta;
-import edu.cientifica.convivirapp.network.PokeapiService;
+import edu.cientifica.convivirapp.demo.Pokemon;
+import edu.cientifica.convivirapp.demo.PokemonRespuesta;
+import edu.cientifica.convivirapp.demo.PokeapiService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -1,6 +1,8 @@
 package edu.cientifica.convivirapp.model;
 
-public class EstadoCuenta {
+import java.io.Serializable;
+
+public class EstadoCuenta implements Serializable {
 
     private int idUPrivada;
     private int idUInmobiliaria;

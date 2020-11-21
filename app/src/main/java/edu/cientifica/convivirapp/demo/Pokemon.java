@@ -1,4 +1,4 @@
-package edu.cientifica.convivirapp.model;
+package edu.cientifica.convivirapp.demo;
 
 public class Pokemon {
     private String name;

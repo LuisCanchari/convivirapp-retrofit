@@ -7,6 +7,7 @@ public class Comunicado {
     private String mensaje;
 
     public Comunicado(int id, String titulo, String tipo, String mensaje) {
+        super();
         this.id = id;
         this.titulo = titulo;
         this.tipo = tipo;
@@ -14,6 +15,7 @@ public class Comunicado {
     }
 
     public Comunicado() {
+        super();
     }
 
     public int getId() {

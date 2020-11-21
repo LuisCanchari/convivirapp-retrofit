@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        android:background="@color/convivir_yellow_300"
+        android:clickable="true"
+        android:layout_marginTop="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:weightSum="4">
+
+            <TextView
+                android:id="@+id/tvTituloCuota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cuota Mantenimiento Julio"
+                android:maxLength="35"
+                android:gravity="center_horizontal"
+
+                style="@style/TextAppearance.AppCompat.Title"/>
+
+
+            <TextView
+                android:id="@+id/tvNumAnioMes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cuota 1002 : 2020-07"
+                android:maxLength="50"
+                android:gravity="center_horizontal"
+                style="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/tvFEmi_FVen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Emitido el: 2020-07-15 - Vence el : 2020-08-05"
+                android:maxLength="50"
+                android:gravity="center_horizontal"
+                style="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/tvSaldoTotal"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="30"
+                android:gravity="center_horizontal"
+                android:text="Saldo a Pagar: S/. 200.00" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

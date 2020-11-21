@@ -29,11 +29,7 @@ public class HomeFragment extends Fragment {
     private static final String TAG = "CONVIVIRX";
     private Retrofit retrofit;
 
-    ListView list;
-    ArrayList<String> nombres = new ArrayList<>();
-
-
-    @Override
+       @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -50,41 +46,8 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.4:8080/convivir/rest/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        Log.i(TAG," onCreate: ");
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1,nombres);
-        list = view.findViewById(R.id.list);
-        list.setAdapter(arrayAdapter);
-        obtenerDatos(arrayAdapter);
 
     }
-    private void obtenerDatos(ArrayAdapter arrayAdapter) {
-        EstadoCuentaApiService service = retrofit.create(EstadoCuentaApiService.class);
-        Call<List<EstadoCuenta>> call = service.obtenerListEstadoCuenta();
-        call.enqueue(new Callback<List<EstadoCuenta>>() {
-            @Override
-            public void onResponse(Call<List<EstadoCuenta>> call, Response<List<EstadoCuenta>> response) {
-                if (response.isSuccessful()){
-                    List<EstadoCuenta> listEstadoCuenta = response.body();
-                    for(EstadoCuenta estadoCuenta: listEstadoCuenta){
-                        nombres.add(estadoCuenta.getNamePropietario());
-                        Log.i(TAG," Propietario:"+estadoCuenta.getNamePropietario());
-                    }
-                }else{
-                    Log.i(TAG,"onResponse: "+response.errorBody());
-                }
-                arrayAdapter.notifyDataSetChanged();
-            }
-            @Override
-            public void onFailure(Call<List<EstadoCuenta>> call, Throwable t) {
 
-                Log.e(TAG,"onFailure " + t.getMessage());
-            }
-        });
-
-    }
 }
