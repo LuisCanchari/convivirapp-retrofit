@@ -11,7 +11,6 @@
         android:orientation="horizontal"
         android:weightSum="6"
         android:background="@color/convivir_yellow_300"
-        android:clickable="true"
         android:layout_marginTop="5dp"
         >
 

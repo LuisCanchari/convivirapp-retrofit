@@ -48,7 +48,7 @@ public class EstadoCuentaCuotaAdapter extends RecyclerView.Adapter<EstadoCuentaC
         EstadoCuentaCuota estadoCuentaCuota = listaEstadoCuentaCuota.get(position);
         holder.tvTituloCuota.setText(estadoCuentaCuota.getCuota().getTitulo());
         holder.tvNumAnioMes.setText("Cuota Numero: " + estadoCuentaCuota.getCuota().getNumCuota() + " del "
-                + estadoCuentaCuota.getCuota().getAnio() + "-" + estadoCuentaCuota.getCuota().getMes());
+                + estadoCuentaCuota.getCuota().getAnio() + "-" + estadoCuentaCuota.getCuota().getMes() +" ("+estadoCuentaCuota.getId()+")");
         holder.tvFEmi_FVen.setText("Emitido el:" + estadoCuentaCuota.getCuota().getFechaEmision()
                 + " Vence el " + estadoCuentaCuota.getCuota().getFechaVencimiento());
         holder.tvSaldoTotal.setText("Saldo que adeuda: S/."

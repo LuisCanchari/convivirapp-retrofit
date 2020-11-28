@@ -23,4 +23,13 @@ public class Concepto {
     public void setNombreLargo(String nombreLargo) {
         this.nombreLargo = nombreLargo;
     }
+
+    @Override
+    public String toString() {
+        return "Concepto{" +
+                "id=" + id +
+                ", nombreCorto='" + nombreCorto + '\'' +
+                ", nombreLargo='" + nombreLargo + '\'' +
+                '}';
+    }
 }

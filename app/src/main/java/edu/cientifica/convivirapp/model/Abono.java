@@ -5,17 +5,15 @@ import java.sql.Date;
 public class Abono {
     private int id;
     private int tipoAbono;
-    private Date fechaAbono;
+    private String fechaAbono;
     private Cuota cuota;
     private double montoAbono;
     private int validado;
 
     public Abono() {
-        super();
     }
 
-    public Abono(int id, int tipoAbono, Date fechaAbono, Cuota cuota, double montoAbono, int validado) {
-        super();
+    public Abono(int id, int tipoAbono, String fechaAbono, Cuota cuota, double montoAbono, int validado) {
         this.id = id;
         this.tipoAbono = tipoAbono;
         this.fechaAbono = fechaAbono;
@@ -40,11 +38,11 @@ public class Abono {
         this.tipoAbono = tipoAbono;
     }
 
-    public Date getFechaAbono() {
+    public String getFechaAbono() {
         return fechaAbono;
     }
 
-    public void setFechaAbono(Date fechaAbono) {
+    public void setFechaAbono(String fechaAbono) {
         this.fechaAbono = fechaAbono;
     }
 
@@ -70,5 +68,17 @@ public class Abono {
 
     public void setValidado(int validado) {
         this.validado = validado;
+    }
+
+    @Override
+    public String toString() {
+        return "Abono{" +
+                "id=" + id +
+                ", tipoAbono=" + tipoAbono +
+                ", fechaAbono='" + fechaAbono + '\'' +
+                ", cuota=" + cuota +
+                ", montoAbono=" + montoAbono +
+                ", validado=" + validado +
+                '}';
     }
 }

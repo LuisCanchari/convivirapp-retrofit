@@ -38,6 +38,7 @@ public class EstadoCuentaCuotaViewModel extends ViewModel {
         EndPointApiService service = restApiAdapter.establecerConexionRest();
 
        Call<EstadoCuentaCuotaResponse> call = service.obtenerListaEstadoCuentaCuotaByUprivada(unidad_privada);
+
        call.enqueue(new Callback<EstadoCuentaCuotaResponse>() {
            @Override
            public void onResponse(Call<EstadoCuentaCuotaResponse> call, Response<EstadoCuentaCuotaResponse> response) {

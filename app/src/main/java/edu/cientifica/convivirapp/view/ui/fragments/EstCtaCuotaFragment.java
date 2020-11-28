@@ -21,9 +21,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import edu.cientifica.convivirapp.R;
+import edu.cientifica.convivirapp.model.Cuota;
+import edu.cientifica.convivirapp.model.CuotaDetalle;
 import edu.cientifica.convivirapp.model.EstadoCuenta;
 import edu.cientifica.convivirapp.model.EstadoCuentaCuota;
 import edu.cientifica.convivirapp.model.EstadoCuentaUPrivada;
@@ -69,6 +72,7 @@ implements EstadoCuentaCuotaListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         EstadoCuentaUPrivada ec = (EstadoCuentaUPrivada) this.getArguments().getSerializable("estadoCuenta");
         int unidadprivada_id = ec.getUnidadPrivada().getId();
 
@@ -90,6 +94,8 @@ implements EstadoCuentaCuotaListener {
             }
         });
 
+        Log.i(TAG, "onViewCreated: EstadoCuentaFRagment" + listaEstadoCuentaCuota.size());
+
         tvTipoNumero = view.findViewById(R.id.tvTipoNumero);
         tvPropietario = view.findViewById(R.id.tvPropietario);
         tvMontoTotal = view.findViewById(R.id.tvMontoTotal);
@@ -110,7 +116,14 @@ implements EstadoCuentaCuotaListener {
 
     @Override
     public void onItemClick(int position) {
-
+        EstadoCuentaCuota estadoCuentaCuota = listaEstadoCuentaCuota.get(position);
+        Cuota cuota = estadoCuentaCuota.getCuota();
+        Toast.makeText(this.getContext(),"Seleccionó : " + cuota.getTitulo(), Toast.LENGTH_LONG).show();
+        Log.i(TAG, "onItemClick: "+ estadoCuentaCuota.toString());
+        Log.i(TAG, "onItemClick: "+ estadoCuentaCuota.getCuota().toString());
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("estadoCuentaCuota",estadoCuentaCuota);
+        navController.navigate(R.id.navcuotaDetalleFragment,bundle);
     }
 
     @Override

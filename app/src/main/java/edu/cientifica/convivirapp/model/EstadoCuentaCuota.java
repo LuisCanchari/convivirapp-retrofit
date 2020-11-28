@@ -1,6 +1,8 @@
 package edu.cientifica.convivirapp.model;
 
-public class EstadoCuentaCuota extends EstadoCuentaMaster{
+import java.io.Serializable;
+
+public class EstadoCuentaCuota extends EstadoCuentaMaster implements Serializable {
     private Cuota cuota;
 
     public Cuota getCuota() {

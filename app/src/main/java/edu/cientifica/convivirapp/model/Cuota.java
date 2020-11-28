@@ -1,8 +1,9 @@
 package edu.cientifica.convivirapp.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Cuota {
+public class Cuota implements Serializable {
     private int id;
     private int numCuota;
     private String titulo;
