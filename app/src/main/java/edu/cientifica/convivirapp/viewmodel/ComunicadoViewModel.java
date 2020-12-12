@@ -36,7 +36,7 @@ public class ComunicadoViewModel extends ViewModel {
         listComunicado.add(new Comunicado(1,"Convocatoria de Reunion","Comunicado","Se convoca a reunion para tratar la siguiente agenda"));
         listComunicado.add(new Comunicado(2,"Vencimiento de Cuota","Aviso","Se informa sobre fecha de vencimiento de cuota"));
         listComunicado.add(new Comunicado(3,"Comunicacion de trabajos","Comunicado","Se convoca a reunion para tratar la siguiente agenda"));
-      /*  listComunicado.add(new Comunicado(4,"Corte de agua","Aviso","Se convoca a reunion para tratar la siguiente agenda"));
+        /*listComunicado.add(new Comunicado(4,"Corte de agua","Aviso","Se convoca a reunion para tratar la siguiente agenda"));
         listComunicado.add(new Comunicado(5,"Vencimiento de Pago","Aviso","Se convoca a reunion para tratar la siguiente agenda"));
         listComunicado.add(new Comunicado(6,"Instalacion de Gas","Comunicado","Se convoca a reunion para tratar la siguiente agenda"));
         listComunicado.add(new Comunicado(7,"Pintura de fachada","Comunicado","Se convoca a reunion para tratar la siguiente agenda"));

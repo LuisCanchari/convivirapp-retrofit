@@ -14,6 +14,4 @@ public interface EstadoCuentaApiService {
     @GET("estadocuenta/all")
     Call<List<EstadoCuenta>> obtenerListEstadoCuenta();
 
-
-
 }

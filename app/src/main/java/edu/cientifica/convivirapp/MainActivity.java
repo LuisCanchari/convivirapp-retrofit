@@ -30,35 +30,12 @@ public class MainActivity extends AppCompatActivity {
         setActionBar((Toolbar) findViewById(R.id.tbPrincipal));
 
         configView();
-/*
-        ResidenteViewModel model =  new ViewModelProvider(this).get(ResidenteViewModel.class);
-        model.getResidentes().observe(this, new Observer<List<Residente>>() {
-            @Override
-            public void onChanged(List<Residente> residentes) {
-                //actualizar la ui
-                String nombres="";
-                for (Residente residente : residentes) {
-                    nombres=nombres+residente.getNombre()+"\n";
-
-                }
-                Toast.makeText(getApplication(), "mensaje "+nombres , Toast.LENGTH_SHORT).show();
-            }
-        });*/
-
     }
-
 
     private void configView() {
         bottomNavigationView = findViewById(R.id.bnvMenu);
         NavController navController = Navigation.findNavController(this, R.id.fragContenido);
         NavigationUI.setupWithNavController(bottomNavigationView,navController);
-      /*  bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Toast.makeText(getApplicationContext(),item.getTitle(),Toast.LENGTH_LONG).show();
-                return true;
-            }
-        });*/
     }
 
 

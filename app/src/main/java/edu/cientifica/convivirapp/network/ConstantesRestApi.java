@@ -1,7 +1,7 @@
 package edu.cientifica.convivirapp.network;
 
 public final class ConstantesRestApi {
-    public static final String ROOT_URL = "http://192.168.1.6:8080/convivir/rest/";
+    public static final String ROOT_URL = "http://192.168.1.3:8080/convivir/rest/";
     public static final String VERSION = "/v1/";
     public static final String ACCESS_TOKEN = "";
     public static final String KEY_ACCESS_TOKEN = "?access_token=";

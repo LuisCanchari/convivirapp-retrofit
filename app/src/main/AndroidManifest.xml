@@ -19,7 +19,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBZRQouNLRkgBLET10wWBCg4QwAn-U1sBA"/>
 
-        <activity android:name=".view.ui.activities.RetrofitActivity"></activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

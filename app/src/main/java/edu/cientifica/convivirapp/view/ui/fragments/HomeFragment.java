@@ -34,9 +34,7 @@ public class HomeFragment extends Fragment {
     private ImageButton ibLocation;
     private NavController navController;
 
-
-
-       @Override
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -45,7 +43,6 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
 
     }
@@ -56,18 +53,13 @@ public class HomeFragment extends Fragment {
         ibLocation = view.findViewById(R.id.ibLocation);
         navController = Navigation.findNavController(this.getActivity(), R.id.fragContenido);
 
-
         ibLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(),"ir al mapa", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "ir al mapa", Toast.LENGTH_LONG).show();
                 navController.navigate(R.id.navMapUbicacionFragment);
-
             }
         });
 
-
-
     }
-
 }
